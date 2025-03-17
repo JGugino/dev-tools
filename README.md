@@ -1,4 +1,4 @@
-# Dev Tools - v0.1
+# Dev Tools
 
 ## Description
 Dev tools is a desktop application that is a suite of development tools all in one place.
