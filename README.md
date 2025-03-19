@@ -3,7 +3,7 @@
 ## Description
 Dev tools is a desktop application that is a suite of development tools all in one place.
 
-## Completed Features
+## Features
 - [ ] Color picker
 - [ ] Project Generator - Grunt
 - [ ] Notes - Markdown
