@@ -25,9 +25,11 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:  fmt.Sprintf("%s - v%s", title, version),
-		Width:  width,
-		Height: height,
+		Title:       fmt.Sprintf("%s - v%s", title, version),
+		Width:       width,
+		Height:      height,
+		AlwaysOnTop: true,
+		Debug:       options.Debug{OpenInspectorOnStartup: true},
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},

@@ -1,5 +1,21 @@
 <script lang="ts">
+    import { onMount, createEventDispatcher } from "svelte";
+    import toast from "svelte-french-toast";
+
     export let title: string;
+
+    const dispatch = createEventDispatcher();
+
+    let licenseKey: string = "";
+
+    const verifyLicense = () => {
+        if (licenseKey.length <= 0) {
+            toast.error("Please enter a license key");
+            return;
+        }
+
+        dispatch("verifiedLicense");
+    };
 </script>
 
 <div id="verify-panel">
@@ -8,9 +24,14 @@
     </div>
     <div class="input">
         <label for="license-key-input">License Key</label>
-        <input type="text" id="license-key-input" name="license-key-input" />
+        <input
+            type="text"
+            id="license-key-input"
+            name="license-key-input"
+            bind:value={licenseKey}
+        />
     </div>
-    <button>Verify</button>
+    <button on:click|preventDefault={verifyLicense}>Verify</button>
 </div>
 
 <style>
